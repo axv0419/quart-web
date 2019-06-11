@@ -1,68 +1,12 @@
 <!doctype html>
-<html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <title>Kafka Micro Svc</title>
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Dexcom Kafka Microsvc</a>
-  </nav>
-
-  <main role="main">
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <input name="message" type="text"></input>
-      <button id="send">Send</button>
-    </div>
-
-    <div class="container">
-        <ul></ul>
-    </div> <!-- /container -->
-
-  </main>
-
-  <footer class="container">
-    <hr>
-  </footer>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="/static/jquery-3.4.1.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script>
-    /*
-    $(document).ready(function() {
-        $.ajax({
-            url: "/actuator/info"
-        }).then(function(data) {
-           if ( data.git ){
-            data.git.commit.time = new Date(data.git.commit.time).toString()
-           }
-           $('#app-info').html(JSON.stringify(data, undefined, 2));
-        });
-        $.ajax({
-            url: "/actuator/health"
-        }).then(function(data) {
-           $('#health-info').html(JSON.stringify(data, undefined, 2));
-        });
-    });*/
-  </script>
-  <script type="text/javascript" src="{{ url_for('static', filename='broadcast.js') }}"></script>
-</body>
-
+<html>
+  <head>
+    <title>SSSE example</title>
+  </head>
+  <body>
+    <input name="message" type="text"></input>
+    <button id="send">Send</button>
+    <ul></ul>
+    <script type="text/javascript" src="{{ url_for('static', filename='broadcast.js') }}"></script>
+  </body>
 </html>

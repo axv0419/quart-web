@@ -59,6 +59,7 @@ async def sse():
     app.clients.add(queue)
     async def send_events():
         while True:
+            await asyncio.sleep(4)
             try:
                 data = await queue.get()
                 event = ServerSentEvent(data,event="update")
@@ -71,9 +72,10 @@ async def sse():
         {
             'Content-Type': 'text/event-stream',
             'Cache-Control': 'no-cache',
-            'Transfer-Encoding': 'chunked',
+            # 'Transfer-Encoding': 'chunked',
         },
     )
+    await queue.put("OK")
     response.timeout = None
     return response
 
