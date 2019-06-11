@@ -6,10 +6,10 @@ RUN adduser -D quart
 WORKDIR /home/quart
 
 # Copy requirements to the app root
-COPY quart_app/requirements.txt ./
+COPY requirements.txt /tmp
 # Create a virtual environment and install the dependecies
 RUN python3 -m venv venv && \
-  venv/bin/pip install --no-cache-dir -r requirements.txt --upgrade && \
+  venv/bin/pip install --no-cache-dir -r /tmp/requirements.txt --upgrade && \
   chown -R quart:quart ./
 
 # Copy the app into our user root
