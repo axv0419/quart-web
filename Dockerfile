@@ -14,7 +14,7 @@ RUN python3 -m venv venv && \
 
 # Copy the app into our user root
 COPY app /home/quart/app
-COPY start.sh /home/quart
+COPY boot.sh /home/quart
 # Make our entrypoint executable
 RUN chmod +x boot.sh
 
