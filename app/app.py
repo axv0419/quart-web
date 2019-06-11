@@ -61,8 +61,7 @@ async def sse():
         while True:
             try:
                 data = await queue.get()
-                print(f"data {data}")
-                event = ServerSentEvent(data)
+                event = ServerSentEvent(data,event="update")
                 yield event.encode()
             except asyncio.CancelledError as error:
                 app.clients.remove(queue)
